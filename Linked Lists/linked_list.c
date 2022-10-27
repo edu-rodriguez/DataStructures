@@ -3,39 +3,31 @@
 
 // I ain't done yet
 
-struct Node{
+typedef struct Node{
     int data;
     struct Node *next;
-};
+}Node;
 
-int len(struct Node *head){
-    int i = 0;
-    while(head != NULL){
-        i++;
-        head = head->next;
+Node *listNodes(Node *list){
+    list = NULL;
+    return list;
+}
+
+Node *addNode(Node *list, int data){
+    Node *newNode;
+    newNode = malloc(sizeof(Node));
+    newNode->data = data;
+    newNode->next = NULL;
+    if (list == NULL){
+        list = newNode;
+    } else {
+
     }
-    return i;
+    return list;
 }
 
 int main(){
-    struct Node *head = malloc(sizeof(struct Node));
-    struct Node *second = malloc(sizeof(struct Node));
-    struct Node *third = malloc(sizeof(struct Node));
-
-    head->data = 1;
-    head->next = second;
-
-    second->data = 2;
-    second->next = third;
-
-    third->data = 3;
-    third->next = NULL;
-
-    if (head != NULL){
-        for(int i = 1; i <= 3; i++){
-            printf("Node %i value: %i\n", i, head->data);
-            head = head->next;
-        }
-    }
-
+    Node *list = listNodes(list);
+    list = addNode(list, 5);
+    printf("The nodes list is: %d\n", list->data);
 }
