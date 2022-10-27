@@ -14,14 +14,18 @@ Node *listNodes(Node *list){
 }
 
 Node *addNode(Node *list, int data){
-    Node *newNode;
-    newNode = malloc(sizeof(Node));
+    Node *newNode, *aux;
+    newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = NULL;
     if (list == NULL){
         list = newNode;
     } else {
-
+        aux = list;
+        while(aux->next != NULL){
+            aux = aux->next;
+        }
+        aux->next = addNode;
     }
     return list;
 }
@@ -29,5 +33,10 @@ Node *addNode(Node *list, int data){
 int main(){
     Node *list = listNodes(list);
     list = addNode(list, 5);
-    printf("The nodes list is: %d\n", list->data);
+    list = addNode(list, 2);
+    while(list != NULL){
+        printf("%i\n", list->data);
+        list = list->next;
+    }
+    free(list);
 }
