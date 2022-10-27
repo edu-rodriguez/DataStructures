@@ -25,7 +25,7 @@ Node *addNode(Node *list, int data){
         while(aux->next != NULL){
             aux = aux->next;
         }
-        aux->next = addNode;
+        aux->next = newNode;
     }
     return list;
 }
