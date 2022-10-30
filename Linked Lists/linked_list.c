@@ -3,6 +3,8 @@
 
 // I ain't done yet
 
+https://github.com/antoniosarosi/dotfiles/tree/83fb32e60921a879cfab717553f8f016e0145d2b
+
 typedef struct Node{
     int data;
     struct Node *next;
